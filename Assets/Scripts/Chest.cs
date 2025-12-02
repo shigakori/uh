@@ -1,17 +1,18 @@
 using UnityEngine;
 
-public class Chest : Collectable
+public class Chest : Collectible
 {
     public Sprite emptyChest;
     public int pesosAmount = 5;
-    
     protected override void OnCollect()
     {
         if (!collected)
         {
-            collected = true;
+            base.OnCollect();
             GetComponent<SpriteRenderer>().sprite = emptyChest;
-            Debug.Log("Gajdhfsjdgh" + pesosAmount + " adjfskdjfksjd");
+            Debug.Log("Grant " + pesosAmount + " pesos!");
         }
+        // base.OnCollect();
+        // Debug.Log("Grant pesos");
     }
 }

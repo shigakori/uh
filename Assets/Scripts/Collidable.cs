@@ -3,27 +3,26 @@ using UnityEngine;
 public class Collidable : MonoBehaviour
 {
     public ContactFilter2D filter;
-    private BoxCollider2D _boxCollider;
-    private Collider2D[] _hits = new Collider2D[10];
+    private BoxCollider2D boxCollider;
+    private Collider2D[] hits = new Collider2D[10];
 
     protected virtual void Start()
     {
-        _boxCollider = GetComponent<BoxCollider2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     protected virtual void Update()
     {
-        // collision
-        _boxCollider.Overlap(filter, _hits);
-        for (int i = 0; i < _hits.Length; i++)
+        // Collision work
+        boxCollider.Overlap(filter, hits);
+        for (int i = 0; i < hits.Length; i++)
         {
-            if (_hits[i] is null)
-                continue;
-
-            OnCollide(_hits[i]);
+            if (hits[i] == null) continue;
             
-            // the array is not cleaned up so we do it ourself
-            _hits[i] = null;
+            OnCollide(hits[i]);
+
+            // The array is not cleaned up, so we do it ourself
+            hits[i] = null;
         }
     }
 
