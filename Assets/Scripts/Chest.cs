@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Chest : Collectible
+public class Chest : Collectable
 {
     public Sprite emptyChest;
     public int pesosAmount = 5;

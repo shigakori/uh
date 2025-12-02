@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Collectible : Collidable
+public class Collectable : Collidable
 {
     // Logic
     protected bool collected;
