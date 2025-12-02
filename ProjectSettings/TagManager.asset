@@ -50,6 +50,9 @@ TagManager:
   - name: Wall
     uniqueID: 1699997585
     locked: 0
+  - name: Interactable
+    uniqueID: 609546971
+    locked: 0
   m_RenderingLayers:
   - Default
   - Light Layer 1
